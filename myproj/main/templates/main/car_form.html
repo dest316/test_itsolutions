@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../static/main/car_form.css">
+    <meta charset="UTF-8">
+    <title>Ваши записи</title>
+</head>
+<body>
+    <div class="container outer">
+        <div class="cars">
+            {% for car in cars %}
+                <a href="{% url 'edit_car' car.id %}"><div class="car">
+                    <span class="title">{{ car.make }}&nbsp;{{car.model}}&nbsp;{{car.year}}</span>
+                    <span class="description">{{car.description}}</span>
+                    <span class="author">{{car.author.username}}</span>
+                </div></a>
+            {% endfor %}
+        </div>
+        <div class="bottom">
+            <a href="{% url 'add_car'%}"><button>Добавить автомобиль</button></a>
+            <a href="{% url 'main_page' %}"><button>Вернуться на главную</button></a>
+        </div>
+    </div>
+</body>
+</html>

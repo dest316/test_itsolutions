@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="static/main/main.css">
+<head>
+    <meta charset="UTF-8">
+    <title>Список автомобилей</title>
+</head>
+<body>
+    <div class="top">
+        {% if user.is_authenticated %}
+            <a href="{% url 'your_cars' %}"><button class="profile-button">Управление записями</button></a>
+            <a href="{% url 'logout' %}"><button class="profile-button">Выход</button></a>
+        {% else %}
+            <a href="{% url 'auth' %}"><button class="profile-button">Вход</button></a>
+            <a href="{% url 'reg' %}"><button class="profile-button">Регистрация</button></a>
+        {% endif %}
+    </div>
+    <div class="container">
+        {% for el in cars %}
+            <a href="{% url 'show_car' el.id %}"><div class="car">
+                <span class="title">{{ el.make }}&nbsp;{{el.model}}&nbsp;{% if el.year %} {{el.year}} {% endif %}</span>
+                <span class="description">{{el.description}}</span>
+                <span class="author">Автор: {{el.author.username}}</span>
+            </div></a>
+        {% endfor %}
+    </div>
+</body>
+</html>

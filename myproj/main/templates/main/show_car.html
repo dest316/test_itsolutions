@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Информация о {{car.make}} {{car.model}}</title>
+    <link rel="stylesheet" href="../static/main/show_car.css">
+</head>
+<body>
+    <div class="container">
+        <div class="top-panel">
+            <a href="{% url 'main_page' %}"><button>Назад</button></a>
+        </div>
+        <hr width="80%">
+        <div class="info">
+            <p>Марка: {{car.make}}</p>
+            <p>Модель: {{car.model}}</p>
+            <p>Год выпуска: {{car.year}}</p>
+            <p>Описание: {{car.description}}</p>
+            <p>Время создания записи: {{car.created_at}}</p>
+            <p>Последнее редактирование: {{car.updated_at}}</p>
+            <p>Автор: {{car.author}}</p>
+        </div>
+        {% if user.is_authenticated %}
+            <form method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit">Написать</button>
+            </form>
+        {% endif %}
+        <div class="comments">
+            {% for com in comments %}
+                <div class="comment">
+                    <span>{{com.author.username}} пишет:</span>
+                    <span>{{com.content}}</span>
+                    <span class="time">{{com.created_at}}</span>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

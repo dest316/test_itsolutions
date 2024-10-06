@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../static/main/car_form.css">
+    <meta charset="UTF-8">
+    <title>Удалить запись</title>
+</head>
+<body>
+    <div class="container">
+        <p>Вы уверены что хотите удалить запись?</p>
+        <form method="post">
+            {% csrf_token %}  
+            <button type="submit">{% block button %}Удалить запись{% endblock %}</button>
+        </form>
+        <span class="error">{{error}}</span>
+        <a href="{% url 'your_cars' %}" id="cancel-button"><button type="button">Отмена</button></a>
+    </div>
+</body>
+</html>

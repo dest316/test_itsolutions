@@ -1,0 +1,4 @@
+{% extends "main/add_car.html" %}
+{% block title %}Редактирование автомобиля{% endblock %}
+{% block button %}Сохранить изменения{% endblock %}
+{% block delete_button %}<a href="{% url 'delete_car' car.id %}"><button>Удалить</button></a>{% endblock %}

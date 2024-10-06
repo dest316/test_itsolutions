@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="../static/users/users.css">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="container">
+        {% block title %}
+            <span class="title">Регистрация</span>
+        {% endblock %}
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            {% block button %}
+                <button type="submit">Зарегистрироваться</button>
+            {% endblock %} 
+        </form>
+    </div>
+</body>
+</html>

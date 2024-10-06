@@ -3,11 +3,7 @@
 *.pyo
 __pycache__/
 
-# Django
-*.sqlite3
-*.env
-media/
-static/
+
 
 # Virtual environment
 venv/
