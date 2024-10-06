@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+div.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: antiquewhite;
+    width: 40vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    padding: 2vw;
+}
+
+div.container div {
+    margin: 1vh 0 1vh 0;
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    flex-direction: column;
+
+}
+span.error {
+    color: red;
+}
+#cancel-button {
+    align-self:self-start;
+    margin: 1vh 0 0 2vw;
+}
+div.outer {
+    position: static !important;
+    transform: none !important;
+    margin: 3vh auto;
+}
+div.cars {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+a {
+    text-decoration: none;
+}
+div.cars a {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    border: solid thin black;
+    margin: 1vh auto;
+    color: black;
+}
+div.bottom a {
+    display: flex;    
+    text-decoration: none;
+    width: 30%;
+}
+div.container div.bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}

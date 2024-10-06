@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: black
+}
+div.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: antiquewhite;
+    width: 100%;
+}
+div.car {
+    background-color: yellow;
+    display: flex;
+    min-height: 10vh;
+    margin: 2vh;
+    padding: 2vh;
+    width: 30%;
+    border: solid thin black;
+    flex-direction: column;
+}
+div.top {
+    display: flex;
+    padding: 1vh;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+}
+button.profile-button {
+    background-color: blueviolet;
+    color: white;
+    min-height: 4vh;
+    margin: 0 2vw 0 2vw;
+}
