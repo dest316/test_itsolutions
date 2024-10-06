@@ -4,9 +4,11 @@ from rest_framework.routers import DefaultRouter
 from .views import CarViewSet, CommentViewSet
 
 
+# Роутер, обеспечивающий корректную работу API, связанную с запросами о записях об автомобилях
 router = DefaultRouter()
-router.register(r'cars', CarViewSet)
+router.register('cars', CarViewSet)
 
+# Представление для API, связанное с обработкой комментариев
 comment_list = CommentViewSet.as_view({
     'get': 'list',
     'post': 'create',

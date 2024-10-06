@@ -20,6 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+# При деплое проекта необходимо создать новый секретный ключ
 SECRET_KEY = 'django-insecure-fxg&peo79p04%u+&f82hy!mn91m6k$^0irx%!%_b8b25=v!$4z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -52,6 +53,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# Настройка доступа к API
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',

@@ -23,6 +23,7 @@ class Car(models.Model):
     def get_absolute_url(self):
         return f"/cars"
 
+    # Информация, необходимая для красивого отображения в админке Django
     class Meta:
         verbose_name = "Автомобиль"
         verbose_name_plural="Автомобили"
@@ -37,6 +38,7 @@ class Comment(models.Model):
     def __str__(self):
         return f"{self.author.username}\n{self.content}"
 
+    # Информация, необходимая для красивого отображения в админке Django
     class Meta:
         verbose_name = "Комментарий"
         verbose_name_plural = "Комментарии"

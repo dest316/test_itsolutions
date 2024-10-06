@@ -2,6 +2,7 @@ from rest_framework import serializers
 from .models import Car, Comment
 
 
+# Сериалайзер для записей об автомобилях
 class CarSerializer(serializers.ModelSerializer):
     class Meta:
         model = Car
@@ -9,6 +10,7 @@ class CarSerializer(serializers.ModelSerializer):
         read_only_fields = ['author', 'id']
 
 
+# Сериалайзер для комментариев к записям об автомобилях
 class CommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment

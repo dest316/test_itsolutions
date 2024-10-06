@@ -10,5 +10,5 @@ class IsAuthorOrReadOnly(permissions.BasePermission):
         # Разрешаем только безопасные методы (GET, HEAD или OPTIONS)
         if request.method in permissions.SAFE_METHODS:
             return True
-        # Проверяем, является ли пользователь автором объекта
+        # Проверяем, является ли пользователь автором объекта для потенциально опасных методов
         return obj.author == request.user
